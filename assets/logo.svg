@@ -1,0 +1,25 @@
+<!-- Simple SVG logo (recreation of your brand mark). Save as assets/logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+<defs>
+<linearGradient id="g1" x1="0" x2="1">
+<stop offset="0" stop-color="#0b63b1"/>
+<stop offset="1" stop-color="#0b6b4a"/>
+</linearGradient>
+<linearGradient id="g2" x1="0" x2="1">
+<stop offset="0" stop-color="#ffd43b"/>
+<stop offset="1" stop-color="#ffb703"/>
+</linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="transparent" />
+<!-- Solve -->
+<text x="24" y="78" font-family="Georgia, 'Libre Baskerville', serif" font-size="72" fill="url(#g1)">Solve</text>
+<!-- it -->
+<text x="300" y="78" font-family="Georgia, 'Libre Baskerville', serif" font-size="72" fill="url(#g2)">it</text>
+<!-- arrow mark -->
+<g transform="translate(420,18)">
+<rect x="0" y="0" width="22" height="22" rx="5" fill="#ffd43b"/>
+<path d="M20 6 L36 6 L36 22" stroke="#0b63b1" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- tagline -->
+<text x="24" y="102" font-family="Inter, Arial, sans-serif" font-size="14" fill="#334155">Payroll | EPF | ESI | HR Policies</text>
+</svg>
