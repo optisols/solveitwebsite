@@ -1,16 +1,19 @@
 <!doctype html>
-<div class="header-inner">
-    <a href="index.html" class="brand" aria-label="SolveIT Home">
+<div class="header-inner" style="padding:22px 28px; display:flex; align-items:center; gap:16px;">
+    <a href="index.html" class="brand" aria-label="SolveIT Home" style="display:flex; align-items:center; 
+    gap:14px;border-bottom:4px solid rgba(4, 36, 65, 0.06); padding-bottom:20px;">
       <!-- logo (SVG or PNG) -->
-      <img src="assets/logo.svg" alt="SolveIT logo" />
-      <div class="site-title">SolveIT — HR · Payroll · Compliance</div>
+      <img src="assets/logo.svg" alt="SolveIT logo" width="800" height="800" style="display:block; max-width:800px; height:auto;" />
+      <div class="site-title" style="font-size:1.5rem; font-weight:700; line-height:1;">Solve it with SOLVEIT</div>
     </a>
   </div>
-<a href="about.html" class="btn">About</a>
-<a href="services.html" class="btn">Services</a>
-<a href="pricing.html" class="btn">Pricing</a>
-<a href="downloads.html" class="btn">Downloads</a>
-<a href="contact.html" class="btn">Contact</a>
+<nav class="main-nav" style="margin-left:50px; display:flex; gap:18px; align-items:center; font-size:1.15rem;">
+  <a href="about.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">About</a>
+  <a href="services.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Services</a>
+  <a href="pricing.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Pricing</a>
+  <a href="downloads.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Downloads</a>
+  <a href="contact.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Contact</a>
+</nav>
 <head>
 <link rel="stylesheet" href="assets/styles.css" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -23,66 +26,116 @@
 <main>
 <section class="hero" aria-labelledby="hero-heading">
 <div>
-<h1 id="hero-heading">We solve. You grow.</h1>
-<p class="lead">SolveIT is a compliance-focused HR solutions firm with over 10 years of field experience. We provide payroll processing, EPF/ESI handling, labour law consulting and inspection & audit support for organisations across manufacturing, pharma, education, IT, BPO and contract staffing sectors.</p>
+<h1 id="hero-heading" style="font-size:5rem; line-height:1.2; margin-bottom:8px;">We solve. You grow.</h1>
+<p class="lead" style="font-size:1.70rem; max-width:900px; line-height:1.5;">SolveIT is a compliance-focused HR solutions firm with over 10 years of field experience. We provide payroll processing, EPF/ESI handling, labour law consulting and inspection & audit support for organisations across manufacturing, pharma, education, IT, BPO and contract staffing sectors.</p>
 
 
-<div style="margin-top:18px;display:flex;gap:12px">
-<a class="btn" href="contact.html">Request a Consultation</a>
-<a class="small" href="downloads.html" style="color:rgba(255,255,255,0.95);text-decoration:underline;align-self:center">Download HR Handbook</a>
+<div style="margin-top:18px; display:flex; gap:12px; align-items:center; font-size:1.25rem;">
+  <a class="btn" href="contact.html" style="padding:12px 18px; font-size:1.25rem;">Request a Consultation</a>
+  <a class="small" href="downloads.html" style="color:rgba(255,255,255,0.95); text-decoration:underline; align-self:center; font-size:1.05rem;">Download HR Handbook</a>
 </div>
 
-
-<div class="card" style="margin-top:22px;">
-<strong style="display:block;color:#063b28">Trusted by 150+ organisations</strong>
-<div class="small" style="margin-top:8px;color:var(--muted)">EPF/ESI audits, inspections and statutory compliance handled with zero penalties across client portfolio.</div>
-</div>
 </div>
 
 
 <aside style="display:flex;flex-direction:column;gap:12px;align-items:stretch">
-<!-- hero illustration (SVG) -->
-<img src="assets/hero-illustration.svg" alt="SolveIT illustration" class="hero-illustration" />
-
-
-<!-- contact card sits below illustration -->
-<div class="card" aria-label="Contact panel" style="color:initial">
-<h3 style="margin-top:0;color:var(--blue-2)">Let's talk</h3>
-<p class="small">Share a few details and we'll get back with a tailored compliance plan.</p>
-<form action="#" method="post" style="margin-top:12px;display:grid;gap:8px">
-<input name="name" placeholder="Full name" required />
-<input name="email" type="email" placeholder="Email" required />
-<input name="company" placeholder="Company name" />
-<button class="btn" type="submit">Request callback</button>
-</form>
-</div>
+<!-- hero illustration (PNG) -->
+<img src="assets/hero-growth.png" alt="SolveIT illustration" class="hero-illustration" style="max-width:520px; height:auto; align-self:center;" />
 </aside>
 </section>
 
+<!-- Trusted section (moved out of hero) -->
+<section class="trusted-section" aria-labelledby="trusted-heading" style="padding:36px 12px; text-align:center; background:linear-gradient(180deg,#eaf5fb,#f7fbff);">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="trusted-meta" style="font-size:2rem;color:#063b28;margin-bottom:8px;">Trusted by</div>
+    <div id="trusted-heading" style="font-weight:700;font-size:1.5rem;color:var(--muted);margin-bottom:6px;display:none">Trusted by</div>
+    <div class="trusted-count-wrap" style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div class="trusted-number" style="font-weight:800;color:#0b63b1;font-size:6rem;line-height:1;">
+        <span id="trusted-count" class="count" data-target="150">0</span><span class="plus" style="font-size:1.25rem;vertical-align:super;">+</span>
+      </div>
+      <strong style="display:block;color:#063b28;font-size:2rem;">Organisations</strong>
+      <div class="small" style="margin-top:8px;color:var(--muted);font-size:1.5rem;max-width:800px;">
+        EPF/ESI audits, inspections and statutory compliance handled with zero penalties across client portfolio.
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="services" style="margin-top:32px">
-<h2 style="margin-bottom:6px">What we do</h2>
-<p class="small">Practical HR operations and compliance delivered with accuracy and confidentiality.</p>
-<div class="services" style="margin-top:14px">
-<div class="service"><h4>Payroll Management</h4><div class="small">Monthly payroll processing, payslips, reconciliations and salary structuring.</div></div>
-<div class="service"><h4>EPF & ESI Processing</h4><div class="small">Registration, returns, remittances and employee account support.</div></div>
-<div class="service"><h4>HR Policy & Handbooks</h4><div class="small">Drafting employee handbooks and policies aligned to state and central laws.</div></div>
-<div class="service"><h4>Inspection & Audit Handling</h4><div class="small">Proactive inspection support, audit responses and representation.</div></div>
-<div class="service"><h4>Contractor & Shop Establishment Compliance</h4><div class="small">Contractor management and Shops & Establishment act compliance.</div></div>
-<div class="service"><h4>HR Outsourcing</h4><div class="small">Managed HR operations, digital registers and confidential record-keeping.</div></div>
-</div>
+<section id="services" style="margin-top:32px; margin-left:50px; margin-right:50px; font-size:1.05rem; line-height:1.45;">
+  <h2 style="margin-bottom:8px; font-size:2.5rem;">What we do</h2>
+  <p class="small" style="font-size:1.125rem; margin-bottom:12px;">Practical HR operations and compliance delivered with accuracy and confidentiality.</p>
+  <div class="services" style="margin-top:18px;">
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+  <div style="flex:1; min-width:200px;">
+    <h4 style="font-size:1.25rem; margin-bottom:6px;">Payroll Management</h4>
+    <div class="small" style="font-size:1rem;">Monthly payroll processing, payslips, reconciliations and salary structuring.</div>
+  </div>
+  <img src="assets/payroll-management.png" alt="Payroll illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:12px;" />
+    </div>
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-size:1.25rem; margin-bottom:6px;">EPF &amp; ESI Processing</h4>
+        <div class="small" style="font-size:1rem;">Registration, returns, remittances and employee account support.</div>
+      </div>
+      <img src="assets/epf-esi.png" alt="EPF & ESI logos" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
+    </div>
+
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-size:1.25rem; margin-bottom:6px;">HR Policy &amp; Handbooks</h4>
+        <div class="small" style="font-size:1rem;">Drafting employee handbooks and policies aligned to state and central laws.</div>
+      </div>
+      <img src="assets/hr-policy.png" alt="HR Policy illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
+    </div>
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-size:1.25rem; margin-bottom:6px;">Inspection &amp; Audit Handling</h4>
+        <div class="small" style="font-size:1rem;">Proactive inspection support, audit responses and representation.</div>
+      </div>
+      <img src="assets/ins-aud.png" alt="Inspection & Audit illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
+    </div>
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-size:1.25rem; margin-bottom:6px;">Contractor &amp; Shop Establishment Compliance</h4>
+        <div class="small" style="font-size:1rem;">Contractor management and Shops &amp; Establishment act compliance.</div>
+      </div>
+      <img src="assets/compliance.png" alt="Shop Establishment illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
+    </div>
+    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-size:1.25rem; margin-bottom:6px;">HR Outsourcing</h4>
+        <div class="small" style="font-size:1rem;">Managed HR operations, digital registers and confidential record-keeping.</div>
+      </div>
+      <img src="assets/hr.png" alt="HR Outsourcing illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
+    </div>
+  </div>
 </section>
 
 
+
+<!-- contact card sits below illustration -->
+<div class="card" aria-label="Contact panel" style="color:initial; text-align:center; width:min(420px,90%); margin:24px auto; font-size:1.2rem; padding:12px;">
+<h3 style="margin-top:0;color:var(--blue-2); font-size:2rem;">Connect With us</h3>
+<p class="small" style="margin:6px 0 10px;font-size:1rem;">Share a few details and we'll get back with a tailored compliance plan.</p>
+<form action="#" method="post" style="margin-top:6px;display:grid;gap:8px;">
+<input name="company" placeholder="Company name" style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
+<input name="name" placeholder="Your name" required style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
+<input name="email" type="email" placeholder="Email" required style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
+<input name="Contact Number" placeholder="Contact Number" style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
+<button class="btn" type="submit" style="padding:8px 12px;font-size:0.95rem;width:100%;">Request callback</button>
+</form>
+</div>
 
 
 </main>
 
 
 <footer>
-<div class="small">© SolveIT — HR, Payroll & Compliance</div>
-<div class="small">www.solveitinfo.com • +91-98654 60601 • hr@solveitinfo.com</div>
+<div class="small" style="margin-left:50px;" >© SolveIT — HR, Payroll & Compliance</div>
+<div class="small" style="margin-right:50px;">www.solveitinfo.com • +91-98654 60601 • hr@solveitinfo.com</div>
 </footer>
 </div>
+<!-- include animated counter script -->
+<script src="assets/main.js"></script>
 </body>
 </html>
