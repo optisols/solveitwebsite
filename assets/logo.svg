@@ -18,8 +18,8 @@
 <!-- arrow mark -->
 <g transform="translate(480,36)">
 <path d="M20 28 L52 28 L52 60" stroke="#0b63b1" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M40 12 L72 12 L72 44" stroke="#0b63b1" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 12 L72 12 L72 44" stroke="#ffb703" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <!-- tagline -->
-<text x="48" y="204" font-family="Inter, Arial, sans-serif" font-size="36" fill="#334155">Payroll | EPF | ESI | HR Policies</text>
+<text x="48" y="204" font-family="Inter, Arial, sans-serif" font-size="36" fill="#ffffffff">Payroll | EPF | ESI | HR Policies</text>
 </svg>

@@ -1,141 +1,989 @@
-<!doctype html>
-<div class="header-inner" style="padding:22px 28px; display:flex; align-items:center; gap:16px;">
-    <a href="index.html" class="brand" aria-label="SolveIT Home" style="display:flex; align-items:center; 
-    gap:14px;border-bottom:4px solid rgba(4, 36, 65, 0.06); padding-bottom:20px;">
-      <!-- logo (SVG or PNG) -->
-      <img src="assets/logo.svg" alt="SolveIT logo" width="800" height="800" style="display:block; max-width:800px; height:auto;" />
-      <div class="site-title" style="font-size:1.5rem; font-weight:700; line-height:1;">Solve it with SOLVEIT</div>
-    </a>
-  </div>
-<nav class="main-nav" style="margin-left:50px; display:flex; gap:18px; align-items:center; font-size:1.15rem;">
-  <a href="about.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">About</a>
-  <a href="services.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Services</a>
-  <a href="pricing.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Pricing</a>
-  <a href="downloads.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Downloads</a>
-  <a href="contact.html" class="btn" style="padding:10px 14px; font-size:1.5rem;">Contact</a>
-</nav>
-<head>
-<link rel="stylesheet" href="assets/styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<meta name="theme-color" content="#0b63b1">
-</head>
-</nav>
-</header>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solveit | HR, Payroll &amp; Compliance Solutions</title>
+    <meta
+      name="description"
+      content="Solveit provides end-to-end HR compliance, payroll, EPF, and ESI services trusted by 150+ organizations."
+    />
+    <link rel="canonical" href="https://www.solveitinfo.com" />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
 
-<main>
-<section class="hero" aria-labelledby="hero-heading">
-<div>
-<h1 id="hero-heading" style="font-size:5rem; line-height:1.2; margin-bottom:8px;">We solve. You grow.</h1>
-<p class="lead" style="font-size:1.70rem; max-width:900px; line-height:1.5;">SolveIT is a compliance-focused HR solutions firm with over 10 years of field experience. We provide payroll processing, EPF/ESI handling, labour law consulting and inspection & audit support for organisations across manufacturing, pharma, education, IT, BPO and contract staffing sectors.</p>
+    <!-- Tailwind CSS CDN -->
 
+    <!-- Tailwind Configuration -->
 
-<div style="margin-top:18px; display:flex; gap:12px; align-items:center; font-size:1.25rem;">
-  <a class="btn" href="contact.html" style="padding:12px 18px; font-size:1.25rem;">Request a Consultation</a>
-  <a class="small" href="downloads.html" style="color:rgba(255,255,255,0.95); text-decoration:underline; align-self:center; font-size:1.05rem;">Download HR Handbook</a>
-</div>
+    <!-- Schema.org Business Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Solveit",
+        "description": "HR, Payroll & Compliance Solutions",
+        "url": "https://www.solveitinfo.com",
+        "logo": "https://www.solveit.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "hr@solveitinfo.com"
+        }
+      }
+    </script>
 
-</div>
+    <style>
+      @keyframes aurora {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
 
+      .aurora-text {
+        background: linear-gradient(
+          90deg,
+          hsl(46, 100%, 55%),
+          hsl(226, 80%, 52%),
+          hsl(262, 70%, 45%),
+          hsl(46, 100%, 55%)
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: aurora 3s linear infinite;
+      }
 
-<aside style="display:flex;flex-direction:column;gap:12px;align-items:stretch">
-<!-- hero illustration (PNG) -->
-<img src="assets/hero-growth.png" alt="SolveIT illustration" class="hero-illustration" style="max-width:520px; height:auto; align-self:center;" />
-</aside>
-</section>
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-<!-- Trusted section (moved out of hero) -->
-<section class="trusted-section" aria-labelledby="trusted-heading" style="padding:36px 12px; text-align:center; background:linear-gradient(180deg,#eaf5fb,#f7fbff);">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="trusted-meta" style="font-size:2rem;color:#063b28;margin-bottom:8px;">Trusted by</div>
-    <div id="trusted-heading" style="font-weight:700;font-size:1.5rem;color:var(--muted);margin-bottom:6px;display:none">Trusted by</div>
-    <div class="trusted-count-wrap" style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-      <div class="trusted-number" style="font-weight:800;color:#0b63b1;font-size:6rem;line-height:1;">
-        <span id="trusted-count" class="count" data-target="150">0</span><span class="plus" style="font-size:1.25rem;vertical-align:super;">+</span>
+      .count-animation {
+        animation: countUp 0.8s ease-out forwards;
+      }
+    </style>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="font-sans text-neutral-foreground bg-neutral">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-tertiary/95 backdrop-blur-sm"
+    >
+      <div class="max-w-screen-xl mx-auto px-8 lg:px-16">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a
+              href="#hero"
+              class="flex items-center hover:opacity-80 transition-opacity duration-300"
+            >
+              <img 
+                src="assets/logo.svg" 
+                alt="Solveit Logo" 
+                class="h-16 w-auto"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#hero"
+              class="text-primary-foreground hover:text-accent transition-colors duration-300 py-2 px-4 cursor-pointer"
+            >
+              Home
+            </a>
+            <a
+              href="#about-us"
+              class="text-primary-foreground hover:text-accent transition-colors duration-300 py-2 px-4 cursor-pointer"
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              class="text-primary-foreground hover:text-accent transition-colors duration-300 py-2 px-4 cursor-pointer"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              class="text-primary-foreground hover:text-accent transition-colors duration-300 py-2 px-4 cursor-pointer"
+            >
+              Contact
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-primary-foreground hover:text-accent transition-colors duration-300 p-2"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
-      <strong style="display:block;color:#063b28;font-size:2rem;">Organisations</strong>
-      <div class="small" style="margin-top:8px;color:var(--muted);font-size:1.5rem;max-width:800px;">
-        EPF/ESI audits, inspections and statutory compliance handled with zero penalties across client portfolio.
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-tertiary border-t border-gray-700"
+      >
+        <div class="px-8 py-4 space-y-2">
+          <a
+            href="#hero"
+            class="block text-primary-foreground hover:text-accent transition-colors duration-300 py-3 px-4 cursor-pointer"
+          >
+            Home
+          </a>
+          <a
+            href="#about-us"
+            class="block text-primary-foreground hover:text-accent transition-colors duration-300 py-3 px-4 cursor-pointer"
+          >
+            About
+          </a>
+          <a
+            href="#services"
+            class="block text-primary-foreground hover:text-accent transition-colors duration-300 py-3 px-4 cursor-pointer"
+          >
+            Services
+          </a>
+          <a
+            href="#contact"
+            class="block text-primary-foreground hover:text-accent transition-colors duration-300 py-3 px-4 cursor-pointer"
+          >
+            Contact
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<section id="services" style="margin-top:32px; margin-left:50px; margin-right:50px; font-size:1.05rem; line-height:1.45;">
-  <h2 style="margin-bottom:8px; font-size:2.5rem;">What we do</h2>
-  <p class="small" style="font-size:1.125rem; margin-bottom:12px;">Practical HR operations and compliance delivered with accuracy and confidentiality.</p>
-  <div class="services" style="margin-top:18px;">
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-  <div style="flex:1; min-width:200px;">
-    <h4 style="font-size:1.25rem; margin-bottom:6px;">Payroll Management</h4>
-    <div class="small" style="font-size:1rem;">Monthly payroll processing, payslips, reconciliations and salary structuring.</div>
-  </div>
-  <img src="assets/payroll-management.png" alt="Payroll illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:12px;" />
-    </div>
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:200px;">
-        <h4 style="font-size:1.25rem; margin-bottom:6px;">EPF &amp; ESI Processing</h4>
-        <div class="small" style="font-size:1rem;">Registration, returns, remittances and employee account support.</div>
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- Video Background -->
+      <div class="absolute inset-0 w-full h-full">
+        <video
+          aria-label="office video background"
+          src="assets/homelanding.mp4"
+          poster="https://c.animaapp.com/mirg7dshxSvZam/img/ai_1-poster.png"
+          class="w-full h-full object-cover"
+          autoplay=""
+          loop=""
+          muted=""
+          playsinline=""
+        ></video>
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 to-black/80"
+        ></div>
       </div>
-      <img src="assets/epf-esi.png" alt="EPF & ESI logos" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
-    </div>
 
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:200px;">
-        <h4 style="font-size:1.25rem; margin-bottom:6px;">HR Policy &amp; Handbooks</h4>
-        <div class="small" style="font-size:1rem;">Drafting employee handbooks and policies aligned to state and central laws.</div>
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 max-w-screen-xl mx-auto px-8 lg:px-16 text-center"
+      >
+        <p
+          class="text-primary-foreground text-sm md:text-base uppercase tracking-wider mb-4 font-normal"
+        >
+          Welcome to SOLVEIT
+        </p>
+        <h1
+          class="font-heading text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold text-primary-foreground mb-6 leading-tight"
+          style="font-family: 'Poppins'; font-size: clamp(3rem, 8vw, 8rem);"
+        >
+          We <span class="aurora-text">Solve</span><br>You Grow
+        </h1>
+        <p
+          class="text-primary-foreground text-lg md:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto font-light"
+        >
+          Partner with Solveit for Payroll, EPF, ESI, and HR Policy Solutions.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-accent text-accent-foreground px-8 py-4 rounded font-normal text-base hover:bg-accent/90 transition-all duration-300 transform hover:scale-105"
+        >
+          Contact Us
+        </a>
       </div>
-      <img src="assets/hr-policy.png" alt="HR Policy illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
-    </div>
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:200px;">
-        <h4 style="font-size:1.25rem; margin-bottom:6px;">Inspection &amp; Audit Handling</h4>
-        <div class="small" style="font-size:1rem;">Proactive inspection support, audit responses and representation.</div>
+    </section>
+
+    <!-- Trust Proof Section -->
+    <section id="trust" class="py-20 lg:py-32 px-8 lg:px-16 bg-gradient-1">
+      <div class="max-w-screen-xl mx-auto text-center">
+        <h2
+          class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6" 
+          style="font-family: 'Poppins'; font-size: clamp(1.5rem, 4vw, 4rem);"
+        >
+          Trusted by 
+          <br><span id="counter" class="text-accent" style="font-family: 'Poppins'; font-size: clamp(3rem, 8vw, 8rem);" >150</span>+<br>
+          Organizations
+        </h2>
+        <p
+          class="text-primary-foreground text-lg md:text-xl max-w-2xl mx-auto font-light"
+        >
+          EPF/ESI audits, compliance, and policies managed with precision.
+        </p>
       </div>
-      <img src="assets/ins-aud.png" alt="Inspection & Audit illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
-    </div>
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:200px;">
-        <h4 style="font-size:1.25rem; margin-bottom:6px;">Contractor &amp; Shop Establishment Compliance</h4>
-        <div class="small" style="font-size:1rem;">Contractor management and Shops &amp; Establishment act compliance.</div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="py-20 lg:py-32 px-8 lg:px-16 bg-neutral">
+      <div class="max-w-screen-xl mx-auto">
+        <h2
+          class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-foreground text-center mb-16"
+        >
+          Our Services
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-primary-foreground"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <text x="12" y="16" textAnchor="middle" fontSize="22" fontWeight="bold">₹</text>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                Payroll Management
+              </h3>
+            </div>
+            <div class="service-body service-body--card1">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+                Comprehensive payroll processing services ensuring accuracy,
+                compliance, and timely disbursements for your organization.
+              </p>
+              <img src="assets/payroll-management.png" alt="Payroll illustration" class="service-img service-img--card1" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-secondary-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                EPF/ESI Compliance
+              </h3>
+            </div>
+            <div class="service-body service-body--card2">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+                Expert management of EPF and ESI compliance, audits, and filings
+                to keep your business penalty-free and compliant.
+              </p>
+              <img src="assets/epf-esi.png" alt="EPF & ESI logos" class="service-img service-img--card2" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-accent rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-accent-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                HR Policy Solutions
+              </h3>
+            </div>
+            <div class="service-body service-body--card3">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+                Tailored HR policies and frameworks designed to streamline
+                operations and foster a productive workplace culture.
+              </p>
+              <img src="assets/hr-policy.png" alt="EPF & ESI logos" class="service-img service-img--card2" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+
+					 <!-- Service Card 4 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-primary-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                Inspection & Audit Handling
+              </h3>
+            </div>
+            <div class="service-body service-body--ins">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+               Proactive inspection support, audit responses and representation.
+              </p>
+              <img src="assets/ins-aud.png" alt="Inspection & Audit illustration" class="service-img service-img--ins" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+
+					 <!-- Service Card 5 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-primary-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                Contractor & Shop Establishment Compliance
+              </h3>
+            </div>
+            <div class="service-body service-body--card5">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+                Contractor management and Shops & Establishment act compliance.
+              </p>
+              <img src="assets/compliance.png" alt="Shop Establishment illustration" class="service-img service-img--card5" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+
+					 <!-- Service Card 6 -->
+          <article
+            class="bg-gray-50 border-2 border-gray-200 rounded p-8 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer"
+          >
+            <div class="flex items-center gap-8 mb-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-8 h-8 text-primary-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="font-heading text-xl md:text-2xl font-semibold text-neutral-foreground"
+              >
+                HR Outsourcing
+              </h3>
+            </div>
+            <div class="service-body service-body--card6">
+              <p class="text-neutral-foreground font-light leading-relaxed">
+               Managed HR operations, digital registers and confidential record-keeping.
+              </p>
+              <img src="assets/hr.png" alt="HR Outsourcing illustration" class="service-img service-img--card6" style="width: 100%; max-width: 180px; height: auto; margin-top: 16px;" />
+            </div>
+          </article>
+        </div>
       </div>
-      <img src="assets/compliance.png" alt="Shop Establishment illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
-    </div>
-    <div class="service" style="padding:12px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:200px;">
-        <h4 style="font-size:1.25rem; margin-bottom:6px;">HR Outsourcing</h4>
-        <div class="small" style="font-size:1rem;">Managed HR operations, digital registers and confidential record-keeping.</div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="py-20 lg:py-32 px-8 lg:px-16 bg-gradient-2">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
+          <!-- About Us Content -->
+          <div class="max-w-3xl">
+            <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6">
+              About Us
+            </h2>
+            <p class="text-primary-foreground text-lg md:text-xl font-light leading-relaxed">
+              At SolveIT, we specialize in delivering reliable and compliant Payroll Management, EPF & ESI Processing, and HR policy consulting services for businesses of all sizes. Based in Trichy, we are committed to simplifying HR operations and ensuring organizations meet every statutory requirement with ease and accuracy.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="hidden lg:block absolute left-1/2 top-1/4 bottom-1/4 w-1 bg-white transform -translate-x-1/2"></div>
+
+          <!-- Why Choose SolveIT -->
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-8 transition-all duration-300 hover:scale-105 hover:rounded-2xl hover:border-primary ease-out cursor-pointer">
+            <h3 class="font-heading text-2xl md:text-3xl font-semibold text-primary-foreground mb-8">
+              Why Choose SolveIT?
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4">
+                <span class="text-accent text-2xl font-bold flex-shrink-0 mt-1">✅</span>
+                <span class="text-primary-foreground text-lg font-light">Trusted by SMEs and startups</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-accent text-2xl font-bold flex-shrink-0 mt-1">✅</span>
+                <span class="text-primary-foreground text-lg font-light">Timely & accurate processing</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-accent text-2xl font-bold flex-shrink-0 mt-1">✅</span>
+                <span class="text-primary-foreground text-lg font-light">Personalized support & guidance</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <img src="assets/hr.png" alt="HR Outsourcing illustration" style="width:140px; height:auto; flex:0 0 140px; border-radius:8px; margin-left:auto;" />
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- Team Collaboration Section -->
+    <section class="py-20 lg:py-32 px-8 lg:px-16 bg-gray-50">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div>
+            <img
+              src="https://c.animaapp.com/mirg7dshxSvZam/img/ai_4.png"
+              alt="team collaboration"
+              class="w-full h-auto rounded shadow-lg"
+              loading="lazy"
+            />
+          </div>
 
+          <!-- Text Content -->
+          <div>
+            <h2
+              class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-foreground mb-6"
+            >
+              Collaborative Partnership
+            </h2>
+            <p
+              class="text-neutral-foreground text-lg md:text-xl mb-6 font-light leading-relaxed"
+            >
+              We believe in building long-term partnerships with our clients.
+              Your success is our success.
+            </p>
+            <p
+              class="text-neutral-foreground text-lg md:text-xl font-light leading-relaxed"
+            >
+              Our dedicated team works closely with you to understand your
+              unique needs and deliver customized solutions that drive results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- contact card sits below illustration -->
-<div class="card" aria-label="Contact panel" style="color:initial; text-align:center; width:min(420px,90%); margin:24px auto; font-size:1.2rem; padding:12px;">
-<h3 style="margin-top:0;color:var(--blue-2); font-size:2rem;">Connect With us</h3>
-<p class="small" style="margin:6px 0 10px;font-size:1rem;">Share a few details and we'll get back with a tailored compliance plan.</p>
-<form action="#" method="post" style="margin-top:6px;display:grid;gap:8px;">
-<input name="company" placeholder="Company name" style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
-<input name="name" placeholder="Your name" required style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
-<input name="email" type="email" placeholder="Email" required style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
-<input name="Contact Number" placeholder="Contact Number" style="width:100%;box-sizing:border-box;padding:8px;font-size:0.95rem;" />
-<button class="btn" type="submit" style="padding:8px 12px;font-size:0.95rem;width:100%;">Request callback</button>
-</form>
-</div>
+    <!-- Reliability You Can Trust Section -->
+    <section id="about" class="py-20 lg:py-32 px-8 lg:px-16 bg-gradient-2">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div class="order-2 lg:order-1">
+            <img
+              src="https://c.animaapp.com/mirg7dshxSvZam/img/ai_2.png"
+              alt="office desk and chairs"
+              class="w-full h-auto rounded shadow-lg"
+              loading="lazy"
+            />
+          </div>
 
+          <!-- Text Content -->
+          <div class="order-1 lg:order-2">
+            <h2
+              class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6"
+            >
+              Reliability You Can Trust
+            </h2>
+            <p
+              class="text-primary-foreground text-lg md:text-xl mb-6 font-light leading-relaxed"
+            >
+              With years of experience in HR compliance and payroll management,
+              Solveit has built a reputation for precision and reliability.
+            </p>
+            <p
+              class="text-primary-foreground text-lg md:text-xl mb-6 font-light leading-relaxed"
+            >
+              Our track record speaks for itself: zero penalties across our
+              entire portfolio. We handle the complexities so you can focus on
+              growth.
+            </p>
+            <div class="flex items-start space-x-4 mb-6">
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-accent-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="font-heading text-xl font-semibold text-primary-foreground mb-2"
+                >
+                  Zero Penalties
+                </h3>
+                <p class="text-primary-foreground font-light">
+                  Flawless compliance management across all client engagements.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-accent-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="font-heading text-xl font-semibold text-primary-foreground mb-2"
+                >
+                  Fast &amp; Efficient
+                </h3>
+                <p class="text-primary-foreground font-light">
+                  Streamlined processes that save time and reduce administrative
+                  burden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 px-8 lg:px-16 bg-neutral">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-foreground mb-6"
+          >
+            Get In Touch
+          </h2>
+          <p
+            class="text-neutral-foreground text-lg md:text-xl max-w-2xl mx-auto font-light"
+          >
+            Ready to solve your HR and payroll challenges? Contact us today for
+            a consultation.
+          </p>
+        </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-gray-50 rounded p-8">
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-neutral-foreground font-normal mb-2"
+                >
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required=""
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:outline-none focus:border-primary text-neutral-foreground bg-neutral transition-colors duration-300"
+                  placeholder="Your name"
+                />
+              </div>
 
-<footer>
-<div class="small" style="margin-left:50px;" >© SolveIT — HR, Payroll & Compliance</div>
-<div class="small" style="margin-right:50px;">www.solveitinfo.com • +91-98654 60601 • hr@solveitinfo.com</div>
-</footer>
-</div>
-<!-- include animated counter script -->
-<script src="assets/main.js"></script>
-</body>
+              <div>
+                <label
+                  for="email"
+                  class="block text-neutral-foreground font-normal mb-2"
+                >
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required=""
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:outline-none focus:border-primary text-neutral-foreground bg-neutral transition-colors duration-300"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-neutral-foreground font-normal mb-2"
+                >
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required=""
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:outline-none focus:border-primary text-neutral-foreground bg-neutral transition-colors duration-300 resize-none"
+                  placeholder="Tell us about your needs..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary text-primary-foreground px-8 py-4 rounded font-normal text-base hover:bg-secondary transition-all duration-300 transform hover:scale-105"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Map -->
+          <div class="bg-gray-50 rounded overflow-hidden">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.4450447984237!2d78.68896547480985!3d10.861093757725836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf53a29d762d9%3A0x3199b70fd9e861f4!2sSolveit!5e0!3m2!1sen!2sin!4v1733434559403!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0; min-height:400px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Solveit Office Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tertiary py-12 px-8 lg:px-16">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+          <!-- Company Info -->
+          <div>
+            <img 
+              src="assets/logo.svg" 
+              alt="Solveit Logo" 
+              class="h-14 w-auto mb-4"
+            />
+            <p class="text-tertiary-foreground font-light mb-4">
+              Your trusted partner for HR, Payroll &amp; Compliance Solutions.
+            </p>
+            <p class="text-tertiary-foreground font-light">
+              Email: hr@solveitinfo.com<br />
+              Phone: +91 9865460601
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="font-heading text-xl font-semibold text-tertiary-foreground mb-4"
+            >
+              Quick Links
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#hero"
+                  class="text-tertiary-foreground hover:text-accent transition-colors duration-300 font-light"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#trust"
+                  class="text-tertiary-foreground hover:text-accent transition-colors duration-300 font-light"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-tertiary-foreground hover:text-accent transition-colors duration-300 font-light"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-tertiary-foreground hover:text-accent transition-colors duration-300 font-light"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <h4
+              class="font-heading text-xl font-semibold text-tertiary-foreground mb-4"
+            >
+              Connect With Us
+            </h4>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.linkedin.com/company/solveithr"
+                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/solveit.hr"
+                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110"
+                aria-label="Instagram"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110-2.88 1.44 1.44 0 010 2.88z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-tertiary-foreground font-light">
+            © 2025 Solveit. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        const isExpanded =
+          mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Counter Animation
+      const counter = document.getElementById('counter');
+      let hasAnimated = false;
+
+      const animateCounter = () => {
+        if (hasAnimated) return;
+
+        const target = 150;
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+            hasAnimated = true;
+          }
+        };
+
+        counter.classList.add('count-animation');
+        updateCounter();
+      };
+
+      // Intersection Observer for counter animation
+      const trustSection = document.getElementById('trust');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter();
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      observer.observe(trustSection);
+
+      // Contact Form Submission
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+
+        // Here you would typically send the data to a server
+        console.log('Form submitted:', data);
+
+        // Show success message
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+      });
+
+      // Highlight active navigation item
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      const highlightNav = () => {
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            navLinks.forEach((link) => {
+              link.classList.remove('text-accent');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('text-accent');
+              }
+            });
+          }
+        });
+      };
+
+      window.addEventListener('scroll', highlightNav);
+      window.addEventListener('load', highlightNav);
+    </script>
+  </body>
 </html>
