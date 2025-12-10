@@ -852,6 +852,8 @@
         </div>
       </div>
     </footer>
+    <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
 
     <!-- JavaScript -->
     <script>
@@ -970,6 +972,55 @@
         try {
           // stopImmediatePropagation in capture phase later if needed
         } catch(e) {}
+      // Toast helper
+        function showToast(message, type = 'success', options = {}) {
+          const container = document.getElementById('toast-container');
+          if (!container) return;
+
+          const ttl = options.duration ?? 5000; // auto-hide duration
+
+          const toast = document.createElement('div');
+          toast.className = 'toast' + (type === 'error' ? ' toast--error' : '');
+          toast.setAttribute('role', 'status');
+          toast.setAttribute('aria-live', 'polite');
+
+          const icon = document.createElement('div');
+          icon.className = 'toast__icon';
+          icon.innerHTML = type === 'error' ? '✖' : '✓';
+
+          const msg = document.createElement('div');
+          msg.className = 'toast__msg';
+          msg.textContent = message;
+
+          const btn = document.createElement('button');
+          btn.className = 'toast__close';
+          btn.setAttribute('aria-label', 'Dismiss notification');
+          btn.innerHTML = '✕';
+          btn.addEventListener('click', () => removeToast(toast));
+
+          toast.appendChild(icon);
+          toast.appendChild(msg);
+          toast.appendChild(btn);
+
+          container.appendChild(toast);
+
+          // Auto remove
+          const timeoutId = setTimeout(() => removeToast(toast), ttl);
+          // store id so manual close can clear it
+          toast._timeoutId = timeoutId;
+
+          function removeToast(el) {
+            if (!el) return;
+            clearTimeout(el._timeoutId);
+            // small fade/slide out
+            el.style.transition = 'transform 180ms ease, opacity 180ms ease';
+            el.style.transform = 'translateX(12px)';
+            el.style.opacity = '0';
+            setTimeout(() => { try { el.remove(); } catch(e){} }, 600);
+          }
+
+          return toast;
+        }
 
         // Add our own submit handler (capture phase to run before many handlers)
         form.addEventListener('submit', async function submitHandler(e) {
@@ -1006,19 +1057,20 @@
 
             if (response.ok || response.status === 302) {
               // success
-              alert('Message sent successfully. If this is the first submission for hr@solveitinfo.com, FormSubmit will send a verification email to that address.');
+              //alert('Message sent successfully. If this is the first submission for hr@solveitinfo.com, FormSubmit will send a verification email to that address.');
               // optionally redirect to thank-you:
               // window.location.href = 'https://www.solveitinfo.com/thank-you.html';
               // clear the form:
+              showToast('Message sent! We will contact you shortly.', 'success');
               form.reset();
             } else {
               // not ok
-              console.error('Submit error', response.status, response.statusText);
-              alert('Submission failed — check console for details.');
+               console.error('Submit error', resp.status, text);
+               showToast('Submission failed. Please try again later.', 'error');
             }
           } catch (err) {
             console.error('Network or fetch error while sending form:', err);
-            alert('Network error occurred. See console for details.');
+            showToast('Network error. Please check your connection.', 'error');
           } finally {
             if (btn) { btn.disabled = false; btn.textContent = btn.dataset.origText || 'Send Message'; }
           }
