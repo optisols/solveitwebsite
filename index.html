@@ -696,7 +696,7 @@
               </div>
               <div>
                 <label for="name" class="block text-neutral-foreground font-normal mb-2">Contact Number *</label>
-                <input type="text" id="name" name="name" required
+                <input type="Number" id="Number" name="Number" required
                       class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:outline-none focus:border-primary text-neutral-foreground bg-neutral transition-colors duration-300"
                       placeholder="Phone Number" />
               </div>
@@ -961,6 +961,70 @@
 
       window.addEventListener('scroll', highlightNav);
       window.addEventListener('load', highlightNav);
+      
+      (function(){
+        const form = document.getElementById('contact-form');
+        if (!form) { console.warn('contact-form not found'); return; }
+
+        // Remove any existing submit listeners bound at the form level (best-effort)
+        try {
+          // stopImmediatePropagation in capture phase later if needed
+        } catch(e) {}
+
+        // Add our own submit handler (capture phase to run before many handlers)
+        form.addEventListener('submit', async function submitHandler(e) {
+          e.preventDefault();            // keep control
+          e.stopImmediatePropagation();  // try to prevent other handlers from running after this
+          console.log('Custom submitHandler running — building FormData');
+
+          // Build FormData and include FormSubmit hidden fields (mirrors hidden inputs)
+          const fd = new FormData(form);
+          // ensure required FormSubmit hidden params are present:
+          fd.set('_subject', fd.get('_subject') || 'New Lead from SolveIT Website');
+          fd.set('_template', fd.get('_template') || 'table');
+          fd.set('_captcha', fd.get('_captcha') || 'false');
+          // optional: include _next if you want a redirect. (Commented out to keep on same page)
+          // fd.set('_next', 'https://www.solveitinfo.com/thank-you.html');
+
+          // UI: disable button while sending
+          const btn = form.querySelector('button[type="submit"]');
+          if (btn) { btn.disabled = true; btn.dataset.origText = btn.textContent; btn.textContent = 'Sending...'; }
+
+          try {
+            const response = await fetch('https://formsubmit.co/hr@solveitinfo.com', {
+              method: 'POST',
+              body: fd,
+              // allow FormSubmit to reply JSON if requested
+              headers: { 'Accept': 'application/json' }
+            });
+
+            console.log('Fetch completed. status:', response.status, response.statusText);
+
+            // Some endpoints return redirects (302), some return 200 + JSON. We'll try to read JSON safely.
+            let text = '';
+            try { text = await response.text(); console.log('Response text:', text); } catch (err) { console.warn('Could not read response text', err); }
+
+            if (response.ok || response.status === 302) {
+              // success
+              alert('Message sent successfully. If this is the first submission for hr@solveitinfo.com, FormSubmit will send a verification email to that address.');
+              // optionally redirect to thank-you:
+              // window.location.href = 'https://www.solveitinfo.com/thank-you.html';
+              // clear the form:
+              form.reset();
+            } else {
+              // not ok
+              console.error('Submit error', response.status, response.statusText);
+              alert('Submission failed — check console for details.');
+            }
+          } catch (err) {
+            console.error('Network or fetch error while sending form:', err);
+            alert('Network error occurred. See console for details.');
+          } finally {
+            if (btn) { btn.disabled = false; btn.textContent = btn.dataset.origText || 'Send Message'; }
+          }
+        }, { capture: true }); // capture true so it runs early
+      })();
+
     </script>
   </body>
 </html>
